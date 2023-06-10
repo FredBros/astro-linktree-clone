@@ -1,15 +1,47 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import Avatar from "src/components/Avatar.astro";
+import FeaturedCardLayout from "@layouts/FeaturedCardLayout.astro";
+import FeaturedCard from "src/components/FeaturedCard.astro";
+import LinksLayout from "@layouts/LinksLayout.astro"
+import Link from "src/components/Link.astro"
+import SocialLayout from "@layouts/SocialLayout.astro";
+import Social from "src/components/Social.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<MainLayout title="Astro linktree clone">
+    <Avatar/>
+    <FeaturedCardLayout>
+        <FeaturedCard featuredCardIcon="mdi:twitter" featuredCardTitle="Follow me" featuredCardLink="https://twitter.com/KrikKrok3">
+        </FeaturedCard>
+        <FeaturedCard featuredCardIcon="logos:patreon" featuredCardTitle="Support Us !" featuredCardLink="https://www.patreon.com/fr-FR">
+        </FeaturedCard>
+        <FeaturedCard featuredCardIcon="logos:discord-icon" featuredCardTitle="Join the Community !" featuredCardLink="https://discord.gg/9UFDcBQc">
+        </FeaturedCard>
+    </FeaturedCardLayout>
+    <LinksLayout>
+    <Link
+      linkTitle='🧑‍🚀 Astro'
+      linkDescription='Astro Homepage'
+      linkUrl='https://www.astro.build'
+    />
+    <Link
+      linkTitle='🌍 My Portfolio'
+      linkDescription='Look at my portfolio!'
+      linkUrl='https://www.fredbrowww.com/'
+    />
+    <Link
+      linkTitle='📝 Blog'
+      linkDescription='Visit my Blog !'
+      linkUrl='https://my-portfolio-blog-ten.vercel.app/blog'
+    />
+    </LinksLayout>
+    <SocialLayout>
+        <Social socialLink="https://www.twitter.com/@krikkrok3'" socialIcon="mdi:twitter"/>
+        <Social socialLink="https://github.com/FredBros" socialIcon="mdi:github"/>
+        <Social socialLink="https://www.linkedin.com/in/fred-brossard-073358206/" socialIcon="mdi:linkedin"/>
+        <Social socialLink="https://www.instagram.com/" socialIcon="mdi:instagram"/>
+    </SocialLayout>
+    
+</MainLayout>
